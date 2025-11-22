@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Vibrant multi-color gradient background -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#ff8e53;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#feca57;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#48dbfb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a6f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Left coin gradient -->
+    <linearGradient id="leftCoin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd93d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f9ca24;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Right coin gradient -->
+    <linearGradient id="rightCoin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a29bfe;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Split arrows gradient -->
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle with gradient -->
+  <circle cx="100" cy="100" r="95" fill="url(#mainGradient)" filter="url(#shadow)"/>
+
+  <!-- Inner white circle for contrast -->
+  <circle cx="100" cy="100" r="78" fill="white" opacity="0.95"/>
+
+  <!-- Left Coin -->
+  <g filter="url(#shadow)">
+    <circle cx="70" cy="100" r="28" fill="url(#leftCoin)"/>
+    <circle cx="70" cy="100" r="24" fill="none" stroke="white" stroke-width="2.5"/>
+    <text x="70" y="110" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">₹</text>
+  </g>
+
+  <!-- Right Coin -->
+  <g filter="url(#shadow)">
+    <circle cx="130" cy="100" r="28" fill="url(#rightCoin)"/>
+    <circle cx="130" cy="100" r="24" fill="none" stroke="white" stroke-width="2.5"/>
+    <text x="130" y="110" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">₹</text>
+  </g>
+
+  <!-- Split Arrows in Center -->
+  <g filter="url(#glow)">
+    <!-- Left arrow -->
+    <path d="M 100 95 L 80 95 L 85 90 M 80 95 L 85 100" stroke="url(#arrowGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Right arrow -->
+    <path d="M 100 105 L 120 105 L 115 100 M 120 105 L 115 110" stroke="url(#arrowGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Decorative elements - sparkles/stars -->
+  <g opacity="0.8">
+    <path d="M 50 50 L 52 52 L 50 54 L 48 52 Z" fill="#ff6b6b"/>
+    <path d="M 150 50 L 152 52 L 150 54 L 148 52 Z" fill="#48dbfb"/>
+    <path d="M 50 150 L 52 152 L 50 154 L 48 152 Z" fill="#feca57"/>
+    <path d="M 150 150 L 152 152 L 150 154 L 148 152 Z" fill="#ee5a6f"/>
+  </g>
+</svg>

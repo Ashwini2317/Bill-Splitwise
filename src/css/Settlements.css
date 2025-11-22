@@ -1,0 +1,348 @@
+/* Settlements Page Styles */
+
+/* Settlement Card */
+.settlement-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid var(--settlement-color);
+}
+
+.settlement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: var(--settlement-color);
+  opacity: 0.05;
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+.settlement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.settlement-card.pending {
+  --settlement-color: #f9ca24;
+}
+
+.settlement-card.completed {
+  --settlement-color: #51cf66;
+}
+
+.settlement-card.rejected {
+  --settlement-color: #ff6b6b;
+}
+
+/* Settlement Icon */
+.settlement-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--settlement-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.settlement-arrow {
+  font-size: 32px;
+  color: #dee2e6;
+  margin: 0 15px;
+}
+
+.settlement-info {
+  flex-grow: 1;
+}
+
+.settlement-from,
+.settlement-to {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.settlement-meta {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.settlement-amount {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--settlement-color);
+  text-align: right;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Payment Method Cards */
+.payment-method-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  border: 2px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-method-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--payment-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.payment-method-card:hover {
+  border-color: var(--payment-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method-card:hover::before {
+  opacity: 0.1;
+}
+
+.payment-method-card.upi {
+  --payment-color: #667eea;
+  --payment-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.payment-method-card.card {
+  --payment-color: #f093fb;
+  --payment-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.payment-method-card.bank {
+  --payment-color: #4ecdc4;
+  --payment-gradient: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 100%);
+}
+
+.payment-method-card.cash {
+  --payment-color: #51cf66;
+  --payment-gradient: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+}
+
+.payment-method-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  background: var(--payment-gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 15px;
+  transition: all 0.3s ease;
+}
+
+.payment-method-card:hover .payment-method-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.payment-method-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.payment-method-desc {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Summary Cards */
+.settlement-summary-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.settlement-summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--summary-gradient);
+}
+
+.settlement-summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.settlement-summary-card.owe {
+  --summary-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.settlement-summary-card.owed {
+  --summary-gradient: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+}
+
+.summary-icon-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--summary-gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin: 0 auto 20px;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.summary-amount-large {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.summary-amount-large.owe {
+  color: #ff6b6b;
+}
+
+.summary-amount-large.owed {
+  color: #51cf66;
+}
+
+/* Empty State */
+.empty-settlement {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 20px;
+  border: 2px dashed #dee2e6;
+}
+
+.empty-settlement i {
+  font-size: 80px;
+  color: #dee2e6;
+  margin-bottom: 20px;
+}
+
+.empty-settlement h4 {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.empty-settlement p {
+  color: #adb5bd;
+}
+
+/* Animations */
+@keyframes settlementPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-settlement-pulse {
+  animation: settlementPulse 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settlement-card {
+    padding: 15px;
+  }
+
+  .settlement-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .settlement-arrow {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+
+  .settlement-amount {
+    font-size: 24px;
+  }
+
+  .payment-method-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .summary-icon-large {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .summary-amount-large {
+    font-size: 32px;
+  }
+}
